@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  color: #616473;
+}
+
+.wrapper {
+  padding: 1.2em;
+  background-color: #FFF;
+}
+
+@media all and (min-width: 900px) {
+  .app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #e9cf3f;
+  }
+  .wrapper {
+    min-width: 700px;
+    min-height: 100vh;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .wrapper {
+    min-width: 700px;
+    width: 50vw;
+    min-height: 80vh;
+  }
+}
+
+.date-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  align-items: center;
+}
+
+.date-wrapper .day-of-week {
+  font-size: 1.3em;
+}
+
+.date-grid {
+  display: grid;
+  grid-template: 'day month' 1fr 'day year' 1fr / auto auto;
+  column-gap: 0.6em;
+  line-height: 0.8;
+}
+
+.date-grid .day {
+  grid-area: day;
+  font-size: 2.5em;
+  margin-bottom: -0.05em;
+}
+
+.date-grid .year {
+  grid-area: year;
+  font-size: 0.9em;
+  align-self: end;
+}
+
+.date-grid .month {
+  grid-area: month;
+  font-size: 0.9em;
+  align-self: start;
+  font-weight: bold;
+}
+
+input[id=input-line] {
+  width: 80%;
+  height: 1.4em;
+  border: 1px solid #616473;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+[id=add-item-form] {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.5em;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-item {
+  background-color: #50e3a3;
+  color: #28684D;
+}
+
+.checked {
+  color: #b6c0ca;
+  text-decoration-line: line-through;
+}
+
+.delete-item {
+  background-color: #FF895A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #774F3F;
+  flex-shrink: 0;
+}
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  transition: all 0.2s ease-out;
+  /* making list items unselectable*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li span {
+  word-break: break-all;
+  -ms-word-break: break-word;
+}
+
+.toggle-item-gently {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  opacity: 0;
+}

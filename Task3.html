@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Task3.css">
+    <link rel="stylesheet" href="Task3.processed.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>To-Do List</title>
+    <script src="Task3.js"></script>
+</head>
+<body>
+<div class="app-wrapper">
+    <div class="wrapper">
+        <header>
+            <div class="date-wrapper">
+                <div class="date-grid">
+                    <div class="day"></div>
+                    <div class="month"></div>
+                    <div class="year"></div>
+                </div>
+                <div class="day-of-week"></div>
+            </div>
+            <form action="#" id="add-item-form">
+                <input type="text" id="input-line" placeholder="Add new item..." required maxlength="100">
+                <label for="input-line">
+                    <button class="btn add-item" type="submit">+</button>
+                </label>
+            </form>
+        </header>
+        <ul id="list" style="font-family: cursive;">
+            <li><span>Walk the dog</span></li>
+            <li><span class="checked">Buy some fruits</span>
+                <div class="btn delete-item">&times;</div>
+            </li>
+            <li><span>Pay the bills</span></li>
+            <li><span>Go to mall</span></li>
+            <li><span>gym time</span></li>
+            <li><span>Finish the project</span></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+$textColor: #616473;
+$text-crossed-out-color: #b6c0ca;
+$button-diameter: 40px;
+$add-button-color: #50e3a3;
+$add-button-text-color: #28684D;
+$delete-button-color: #FF895A;
+$delete-button-text-color: #774F3F;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin show-background {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f0efe9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  color: $textColor;
+}
+
+.wrapper {
+  padding: 1.2em;
+  background-color: #FFF;
+}
+
+@media all and (min-width: 900px) {
+  .app-wrapper {
+    @include flex-center;
+    @include show-background;
+  }
+
+  .wrapper {
+    min-width: 700px;
+    min-height: 100vh;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+  }
+}
+
+
+@media all and (min-width: 1200px) {
+  .wrapper {
+    min-width: 700px;
+    width: 50vw;
+    min-height: 80vh;
+  }
+}
+
+.date-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  align-items: center;
+
+  .day-of-week {
+    font-size: 1.3em;
+  }
+}
+
+
+.date-grid {
+  display: grid;
+  grid-template: 'day month' 1fr
+                 'day year' 1fr / auto auto;
+  column-gap: 0.6em;
+  line-height: 0.8;
+
+  .day {
+    grid-area: day;
+    font-size: 2.5em;
+    margin-bottom: -0.05em;
+  }
+
+  .year {
+    grid-area: year;
+    font-size: 0.9em;
+    align-self: end;
+  }
+
+  .month {
+    grid-area: month;
+    font-size: 0.9em;
+    align-self: start;
+    font-weight: bold;
+  }
+}
+
+input[id=input-line] {
+  width: 80%;
+  height: 1.4em;
+  border: 1px solid $textColor;
+  border-radius: 4px;
+  box-shadow:none;
+}
+
+[id=add-item-form] {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  margin-left: auto;
+  width: $button-diameter;
+  height: $button-diameter;
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.5em;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.2);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.2);
+}
+
+.add-item {
+  background-color: $add-button-color;
+  color: $add-button-text-color;
+}
+
+.checked {
+  color: $text-crossed-out-color;
+  text-decoration-line: line-through;
+}
+
+.delete-item {
+  background-color: $delete-button-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $delete-button-text-color;
+  flex-shrink: 0;
+}
+
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+ul {
+  li {
+    list-style: none;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: $button-diameter + 20px;
+    transition: all 0.2s ease-out;
+
+    /* making list items unselectable*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    span {
+      word-break: break-all;                //IE fallback
+      -ms-word-break: break-word;
+    }
+  }
+}
+
+.toggle-item-gently {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  opacity: 0;
+}
